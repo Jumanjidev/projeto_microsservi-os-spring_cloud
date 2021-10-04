@@ -1,5 +1,8 @@
 
 spring:
+  # https://docs.spring.io/spring-cloud-config/docs/current/reference/html/#config-data-import
+  config:
+  import: 'optional:configserver:'
   application:
     name: service-discovery
 

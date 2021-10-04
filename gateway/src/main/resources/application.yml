@@ -1,7 +1,10 @@
 
 spring:
-  application:
-    name: gateway
+  # https://docs.spring.io/spring-cloud-config/docs/current/reference/html/#config-data-import
+  config:
+    import: 'optional:configserver:'
+      application:
+        name: gateway
 
     cloud:
       config:

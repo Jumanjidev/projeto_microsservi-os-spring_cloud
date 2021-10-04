@@ -9,14 +9,14 @@ import org.springframework.data.elasticsearch.config.AbstractElasticsearchConfig
 import org.springframework.data.elasticsearch.repository.config.EnableElasticsearchRepositories;
 
 @Configuration
-@EnableElasticsearchRepositories(basePackages = "one.digitalinnovation.experts.productcatalog.repository")
+@EnableElasticsearchRepositories(basePackages = "one.digitalinnovation.experts/productcatalog.repository")
 public class ElasticSearchConfig extends AbstractElasticsearchConfiguration {
 
     @Bean
     @Override
     public RestHighLevelClient elasticsearchClient() {
         final ClientConfiguration config = ClientConfiguration.builder()
-                .connectedTo("localhost:9200", "localhost:9300")
+                .connectedTo("localhost:9200")
                 .build();
         return RestClients.create(config).rest();
     }
